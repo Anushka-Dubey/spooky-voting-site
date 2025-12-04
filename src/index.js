@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// The import path is now simpler because App.jsx is in the same folder as index.js
-import App from './App.jsx'; 
+// *** THIS MUST POINT TO './App.js' (assuming you renamed the main file in src) ***
+import App from './App.js'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
