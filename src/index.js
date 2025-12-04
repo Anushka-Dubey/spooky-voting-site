@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// *** NEW: Importing the global CSS file ***
+// *** THIS LINE LOADS THE GLOBAL STYLES (STEP 1) ***
 import './index.css'; 
 
-// This must point to the file you just renamed: App.js
+// This must point to your main component file
 import App from './App.js'; 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
