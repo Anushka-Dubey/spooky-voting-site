@@ -1,10 +1,10 @@
-/* Injecting the global styles and background */
+/* Global Styles for the Spooky Portal */
 body {
     margin: 0;
-    /* This applies the black background globally */
+    /* This ensures a consistent black background */
     background-color: black;
-    /* Use a suitable gothic-style font stack */
-    font-family: 'Times New Roman', serif;
+    /* Fallback font for a gothic feel */
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
 }
 
 /* Ensure the root element fills the viewport */
@@ -12,7 +12,8 @@ body {
     min-height: 100vh;
 }
 
-/* Custom Keyframes for Aesthetic Components (Must be global CSS) */
+/* --- Global Keyframes for Aesthetic Components --- */
+
 @keyframes twinkle {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 1; }
