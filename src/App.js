@@ -735,7 +735,7 @@ const DashboardScreen = ({ db, appState, mummyVotes, runWithRetry }) => {
                   <div
                     className={`h-full transition-all duration-700 ease-out flex items-center px-4 font-black text-lg text-white whitespace-nowrap
                       ${isWinner ? 'bg-orange-600 shadow-lg shadow-orange-500/50' : HALLOWEEN_GRADIENT}`}
-                    style={{ width: `${Math.max(percentage, 2)}%` }}
+                    style={{ width: `${Math.max(percentage, 2)}%" `}}
                   >
                     {votes} Votes ({percentage.toFixed(1)}%)
                     {isWinner && <Trophy className="w-5 h-5 ml-2 text-yellow-300" />}
