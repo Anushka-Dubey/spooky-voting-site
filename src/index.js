@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// Import your main component file
-import App from './MummyVotePortal.jsx'; 
+// The import path is now simpler because App.jsx is in the same folder as index.js
+import App from './App.jsx'; 
 
-// This assumes your public/index.html has <div id="root"></div>
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    {/* Render your main component */}
     <App /> 
   </React.StrictMode>
 );
