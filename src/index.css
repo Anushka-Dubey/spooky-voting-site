@@ -1,0 +1,31 @@
+/* Injecting the global styles and background */
+body {
+    margin: 0;
+    /* This applies the black background globally */
+    background-color: black;
+    /* Use a suitable gothic-style font stack */
+    font-family: 'Times New Roman', serif;
+}
+
+/* Ensure the root element fills the viewport */
+#root {
+    min-height: 100vh;
+}
+
+/* Custom Keyframes for Aesthetic Components (Must be global CSS) */
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+@keyframes float-ghost {
+    0%, 100% { transform: translateY(0) rotate(0); opacity: 0.6; }
+    50% { transform: translateY(-30px) rotate(5deg); opacity: 0.8; }
+}
+@keyframes pumpkin-pulse {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px #FF8C00); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 15px darkorange); }
+}
+@keyframes horizontal-float {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(100%); }
+}
