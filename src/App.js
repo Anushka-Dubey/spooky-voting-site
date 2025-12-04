@@ -65,16 +65,7 @@ const PumpkinAnimated = ({ className = '', style = {} }) => (
     className={`absolute w-24 h-24 ${className}`}
     style={{ ...style, animation: 'pumpkin-pulse 4s infinite alternate, horizontal-float 15s infinite linear' }}
   >
-    <style jsx="true">{`
-      @keyframes pumpkin-pulse {
-        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px orange); }
-        50% { transform: scale(1.1); filter: drop-shadow(0 0 15px darkorange); }
-      }
-      @keyframes horizontal-float {
-        0% { transform: translateX(0%); }
-        100% { transform: translateX(100%); }
-      }
-    `}</style>
+    {/* Cleaned: Removed problematic <style jsx="true"> block */}
     <svg className="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
       {/* Body */}
       <circle cx="50" cy="50" r="45" fill="#FF8C00" />
@@ -134,18 +125,7 @@ const HalloweenBackground = () => {
           <path d="M0 100 L0 75 C10 70, 20 75, 30 70 L30 100 Z M35 100 L35 60 C50 50, 70 50, 85 60 L85 100 Z M90 100 L90 80 C95 78, 100 85, 100 85 L100 100 Z" fill="#111827" opacity="0.8" />
           <path d="M15 100 L15 80 C20 78, 25 80, 25 80 L25 100 Z" fill="#1F2937" opacity="0.85" /> 
         </svg>
-        <style jsx="true">{`
-          @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-          }
-          @keyframes float-ghost {
-            0%, 100% { transform: translateY(0) rotate(0); opacity: 0.6; }
-            50% { transform: translateY(-30px) rotate(5deg); opacity: 0.8; }
-          }
-          /* Apply individual animation delays to stars using generated class names */
-          ${stars.map((star, i) => `.star-${i} { animation: twinkle ${Math.random() * 5 + 3}s infinite alternate; animation-delay: ${star.delay}; }`).join('\n')}
-        `}</style>
+        {/* Cleaned: Removed problematic <style jsx="true"> block. Styles are now in src/index.css */}
 
         {/* Floating Animated Ghost Figures */}
         <div className="absolute top-[15%] left-[5%] text-gray-400/50" style={{ animation: 'float-ghost 10s infinite ease-in-out', animationDelay: '1s' }}>
@@ -194,11 +174,11 @@ const PitchGeneratorModal = ({ isOpen, onClose, runWithRetry }) => {
     };
 
     try {
-      const response = await fetch(apiUrl, {
+      const response = await runWithRetry(() => fetch(apiUrl, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
-      });
+      }));
 
       const result = await response.json();
       const text = result.candidates?.[0]?.content?.parts?.[0]?.text;
